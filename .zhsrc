@@ -1,0 +1,47 @@
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/claytonburrows/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/claytonburrows/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/claytonburrows/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/claytonburrows/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# added by Miniconda3 4.7.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/claytonburrows/opt/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/claytonburrows/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/claytonburrows/opt/miniconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/claytonburrows/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+
+# *** Set Options ***
+setopt MENU_COMPLETE
+
+# Shows files that start with "."; i.e. ".gvimrc"
+alias ls='ls -a'
+
+# Alias
+alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias g++='g++-9'
+
+# Tab-Complete not cap-sensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+autoload -U compinit && compinit
+bindkey '^[[Z' reverse-menu-complete
